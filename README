@@ -4,3 +4,26 @@ wwward@pobox.com
 William W. Ward
 Copyright 2012 (Licensed as GPL)
 
+What it is:
+A simple Arduino sketch and a simple bash script. The script
+progressMeter.sh takes the serial port path (under Unix) and an integer
+value 0-99 and transmits that as a byte to the serial port.  The Arduino
+sketch reads the byte from the serial port and maps it as a value, 0-254
+using the Pulse Width Modulation feature of the Atmega to control an
+attached voltmeter.  The nominal output in a simple Arduino setup with a
+meter will be within the range 0-5 volts.  Some meters may require a
+negative voltage to pull the needle down to zero if their springs are
+such that they don't automatically home to 0 volts (apparently my old
+meter won't return to 0 unless it's pulled down.)
+
+You can attach anything you like, realistically, but you'll have to deal
+with calibrating the PWM output to fit the input range of the indicator.
+If it's an LED, it will have a narrow range where it emits light
+starting at some minimum voltage up to its rated maximum, which is
+usually less than 5v.
+
+This is a trivial implementation and clearly the code is extremely
+brittle.  However, I wanted to get the proof of concept running for my
+own amusement.
+
+- wwward
