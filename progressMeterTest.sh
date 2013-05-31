@@ -5,7 +5,7 @@
 VALUE=0
 DIRECTIONUP=1
 while true; do
-	`./meter.sh $1 $VALUE`
+	`./progressMeter.sh $1 $VALUE`
 	if [ $DIRECTIONUP -eq 0 ]; then
 	let VALUE-=1
 	elif [ $DIRECTIONUP -eq 1 ]; then
